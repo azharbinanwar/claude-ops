@@ -1,0 +1,13 @@
+{
+  "name": "claude-ops",
+  "owner": {
+    "name": "Azhar Ali"
+  },
+  "plugins": [
+    {
+      "name": "claude-ops",
+      "source": "./",
+      "description": "Typed, per-turn slash commands that cut tokens, latency, and over-eager coding."
+    }
+  ]
+}
