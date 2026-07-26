@@ -16,8 +16,15 @@ Putting these in CLAUDE.md makes them **always-on** (and costs context every tur
 
 ## Install
 
+Add the marketplace:
+
 ```
 /plugin marketplace add azharbinanwar/claude-ops
+```
+
+Install the plugin:
+
+```
 /plugin install claude-ops@claude-ops
 ```
 
