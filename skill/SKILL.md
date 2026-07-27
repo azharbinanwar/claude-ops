@@ -1,5 +1,5 @@
 ---
-name: claude-ops
+name: ops-modes
 description: Token-saver response modes. When the user starts a message with a shortcut like /short, /yn, /easy, /summary, /table, /nocode, /confirm, /options, /steps, /compare, or /deepthink, apply that mode's response rules for that message only.
 ---
 
