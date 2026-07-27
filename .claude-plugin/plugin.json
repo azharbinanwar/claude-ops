@@ -1,6 +1,6 @@
 {
   "name": "claude-ops",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Typed, per-turn slash commands that cut tokens, latency, and over-eager coding. Stop retyping 'be brief, no code, plain words' — type /short once.",
   "author": {
     "name": "Azhar Ali"

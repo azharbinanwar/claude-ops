@@ -7,4 +7,6 @@ Do this using the code and facts already present in this conversation — files 
 
 Open a file only if something you genuinely need was never shown, or you're about to edit a region you haven't seen — then read just that region. If you believe context is stale (file changed since it was read), say which file in one line instead of silently re-reading everything.
 
+Prefer the smallest change to existing components — extend (add a parameter/slot), never build a parallel copy of something that exists. If extending truly won't work, say so in one line and wait, instead of duplicating.
+
 Task: $ARGUMENTS

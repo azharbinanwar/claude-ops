@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.2.0 — 2026-07-27
+
+- New: `skill/SKILL.md` — claude.ai skill packaging the 13 response-style modes for web chats; zip attached to releases
+- `/use-context` now forbids building parallel copies of existing components — extend instead, or stop and say why
+- README: "Use it on claude.ai too" section
+
 ## 1.1.0 — 2026-07-27
 
 - New: `/confirm` — restates what it understood from your request (goal, scope, assumptions) and waits, before touching anything

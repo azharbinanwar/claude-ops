@@ -32,6 +32,14 @@ Or straight from a local clone: `/plugin marketplace add ./claude-ops`
 
 Then run `/reload-plugins` (or restart Claude Code) and type `/ops` to see the cheat sheet. Type `/` anytime for the autocomplete list — no memorizing needed.
 
+### Update
+
+```
+/plugin marketplace update claude-ops
+```
+
+Then `/reload-plugins`. New versions are listed in [CHANGELOG.md](CHANGELOG.md).
+
 ## Commands
 
 ### Quick answers
@@ -103,6 +111,10 @@ Same questions, fresh headless sessions, plain vs command — real numbers from 
 ## Does having 29 commands cost tokens?
 
 No. Every command sets `disable-model-invocation: true`, so none of them are loaded into Claude's context until the moment you type one — then only that command's few lines are added, for that turn. Idle cost: ~zero. Use the five you love, ignore the rest.
+
+## Use it on claude.ai too
+
+The `skill/SKILL.md` file packages the response-style modes (/short, /yn, /easy, /table, ...) as a claude.ai skill. Zip it (`cd skill && zip claude-ops-skill.zip SKILL.md`) — or grab the zip from the latest GitHub Release — and upload it in claude.ai → Settings → Skills. Same shortcuts, web chats. (Model routing, tool caps, and git commands are Claude Code-only.)
 
 ## Rules vs commands — where should your habit go?
 
