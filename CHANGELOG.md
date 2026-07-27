@@ -1,5 +1,19 @@
 # Changelog
 
+## 1.1.0 — 2026-07-27
+
+- New: `/confirm` — restates what it understood from your request (goal, scope, assumptions) and waits, before touching anything
+- New: `/is-done` — Yes/No completion check answered from the conversation, no re-reading files
+- New: `/research` — deep web research with a sources list
+- New: `/table` — any answer formatted as a markdown table
+- New: `/latest` — injects the real current date so "last week"/"latest" resolve correctly (git ranges, fresh web results)
+- `/research` now injects the real date and prefers sources from the last 30 days
+- New: `/like-this` — build something by mirroring an existing pattern in the codebase, no redesign
+- New: `/strict` — do the task strictly inside project conventions (docs, structure, patterns); stop rather than improvise
+- New: `/use-context` — do the task from code already shown in the conversation; open files only for genuinely unseen regions
+- `/why` now answers questions about Claude's own recent changes from the conversation, zero re-reading
+- README: install commands split into separate copyable blocks
+
 ## 1.0.0 — 2026-07-27
 
 Initial release.

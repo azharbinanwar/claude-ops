@@ -5,6 +5,6 @@ disable-model-invocation: true
 ---
 Explain the root cause of this — why it happens, not how to fix it. Do not edit any files, do not propose a fix unless asked. Keep it under 6 lines.
 
-At most 2 targeted tool calls to confirm the cause — no broad exploration.
+At most 2 targeted tool calls to confirm the cause — no broad exploration. If the question is about a choice or change YOU made in this conversation, answer from the conversation only — zero tool calls, no re-reading your own work.
 
 Explain: $ARGUMENTS

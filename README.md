@@ -47,6 +47,10 @@ Then run `/reload-plugins` (or restart Claude Code) and type `/ops` to see the c
 | `/example <api>` | One minimal working example |
 | `/compare <x vs y>` | Small table + one-line verdict |
 | `/regex <pattern>` | Regex + one match + one non-match |
+| `/table <anything>` | The answer as a markdown table |
+| `/is-done` | Yes/No completion check from the conversation — no re-reading |
+| `/research <topic>` | Deep web research with a sources list |
+| `/latest <question>` | Time-aware answer — today's real date auto-injected, "last week" resolved correctly |
 | `/where <thing>` | Clickable `file:line` locations only |
 | `/name <thing>` | 3–5 name suggestions |
 
@@ -55,9 +59,13 @@ Then run `/reload-plugins` (or restart Claude Code) and type `/ops` to see the c
 |---|---|
 | `/nocode <question>` | Answer only — zero file edits this turn |
 | `/quick <task>` | Act now, skip exploration, no narration |
+| `/use-context <task>` | Work from what's already in the conversation — no re-reading files |
+| `/confirm <request>` | Restate what it understood, then wait — no code |
 | `/tell-me-first <task>` | Plan in ≤5 lines, stop, wait for your OK |
 | `/todos <task>` | Show numbered checklist first, then execute |
 | `/patch-only <fix>` | Exactly the fix — no refactors, no drive-bys |
+| `/like-this <new> like <existing>` | Build it by mirroring an existing pattern — no redesign |
+| `/strict <task>` | Follow project structure/docs/conventions exactly — nothing out of the box |
 | `/diff-only <change>` | Unified diff shown, not applied |
 | `/deepthink <problem>` | Opposite of /short: Opus + max reasoning |
 | `/consult <proposal>` | Fresh-eyes second-opinion agent |
