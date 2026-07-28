@@ -1,5 +1,12 @@
 # Changelog
 
+## Unreleased
+
+- `/create-pr` now detects the repo's real default branch (`gh repo view`/`origin/HEAD`, not a hardcoded `main`), offers a target-branch picker labeling the recommended default, and checks for an already-open PR on the branch before drafting a new one
+- `/create-release` now checks `gh auth status` and that a GitHub remote exists first, and reports a one-line undo hint (`gh release delete`) after creating
+- `/commit-only`, `/commit-and-push` now report the exact error and stop (never bypass) if a pre-commit hook rejects the commit; `/commit-and-push` does the same for a rejected push (never force), and both report a one-line undo hint after success
+- All four git-action commands now distinguish picking "Fix something first" (pure stop, wait) from typing a correction directly via the picker's free-text option (treated as the fix itself — applied immediately, then the corrected message/notes and picker are shown again)
+
 ## 1.3.1 — 2026-07-28
 
 - Fix: `/create-release` used command substitution (`$(...)`) in an inline shell command, which Claude Code's permission check always rejects regardless of `allowed-tools` — replaced with plain separate commands

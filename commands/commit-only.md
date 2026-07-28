@@ -19,7 +19,7 @@ disable-model-invocation: true
    - **commit-body** — the rest of the message, only if the diff genuinely needs one. Never include AI attribution of any kind (no "Co-Authored-By: Claude", no "Generated with" lines).
    `commit-title` + `commit-body` together are the exact text that goes into `git commit` — Change list and AI check are review-only, never part of the commit.
 3. Present two real selectable options using the option-picker tool, not plain-text yes/no:
-   - **Commit** — stages exactly the files listed above (never `git add -A` or `git add .`), then runs `git commit` with `commit-title` + `commit-body` via heredoc. Report the resulting commit hash. Does not push. Nothing else.
-   - **Fix something first** — ends the turn immediately, nothing committed. Do not guess what's wrong, do not ask follow-ups. Wait for the next message.
+   - **Commit** — stages exactly the files listed above (never `git add -A` or `git add .`), then runs `git commit` with `commit-title` + `commit-body` via heredoc. If the commit fails (e.g. a pre-commit hook rejects it), report the exact error and stop — never retry with `--no-verify` or any other bypass. On success, report the resulting commit hash and a one-line undo hint: `git reset --soft HEAD~1`. Does not push. Nothing else.
+   - **Fix something first** — ends the turn immediately, nothing committed. Do not guess what's wrong, do not ask follow-ups. Wait for the next message. If instead the user types a correction directly (the picker's built-in free-text option) rather than picking this, treat that text as the fix itself — apply it, then show the corrected `commit-title`/`commit-body` and this picker again, don't just stop.
 
 Emphasis (optional): $ARGUMENTS
