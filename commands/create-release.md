@@ -5,14 +5,14 @@ allowed-tools: Bash(git tag:*), Bash(git log:*), Bash(git describe:*), Bash(git 
 disable-model-invocation: true
 ---
 ## Context
-- GitHub auth: !`gh auth status 2>&1 || true`
+- GitHub auth: !`gh auth status >/dev/null 2>&1 && echo "logged in" || echo "not logged in"`
 - Remote: !`git remote get-url origin 2>/dev/null || echo "none"`
 - Latest tag: !`git describe --tags --abbrev=0 2>/dev/null || echo "none yet"`
 - Recent commits: !`git log --oneline -15 2>/dev/null || true`
 - Existing tags: !`git tag --sort=-creatordate 2>/dev/null | head -5 || true`
 
 ## Task
-1. If "GitHub auth" above doesn't show logged in, or "Remote" shows "none", report that exact problem in one line and stop — do not attempt anything else.
+1. If "GitHub auth" above shows "not logged in", or "Remote" shows "none", report that exact problem in one line and stop — do not attempt anything else.
 2. Work out the version: prefer a version field already in the repo (`plugin.json`, `package.json`, etc.) or the top dated section of `CHANGELOG.md`. If truly ambiguous, ask for it in one line instead of guessing. Use $ARGUMENTS as an override if given.
 3. Check "Existing tags" above. If a tag matching this version already exists, present two different options instead of the ones below:
    - **Bump version & prepare** — update only the version field in the matching file (`plugin.json`/`package.json`/etc.), nothing else — do not touch `CHANGELOG.md` or any other file, that's the user's call. Then stop: tell them to test locally, and to run `/create-release` again when ready. Do not create a release now.
