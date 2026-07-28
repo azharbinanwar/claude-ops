@@ -10,13 +10,18 @@ disable-model-invocation: true
 - Recent style: !`git log --oneline -10 2>/dev/null || true`
 - Current branch: !`git branch --show-current 2>/dev/null || true`
 - Upstream: !`git rev-parse --abbrev-ref --symbolic-full-name @{u} 2>/dev/null || echo "none set"`
+- Last commit: !`git log -1 --format="%h %s (%cr)" 2>/dev/null || true`
 
 ## Task
-1. List the open changes above, grouped as New / Modified / Deleted, one line each.
-2. If any file reads like an AI-tracking artifact (scratch notes, `PLAN.md`/`NOTES.md`/`SUMMARY.md`-style files, anything not clearly part of the real source tree), flag it in one line as "better excluded (add to .git/info/exclude): path" — a note, not a question.
-3. Write ONE commit message covering ALL open changes (staged + unstaged + untracked) — the diff is the truth, not this conversation. Match the repo's existing message style. Subject ≤72 chars; body only if the diff genuinely needs one. Never include AI attribution of any kind (no "Co-Authored-By: Claude", no "Generated with" lines).
-4. Present two real selectable options using the option-picker tool, not plain-text yes/no:
-   - **Commit & Push** — stages exactly the files listed above (never `git add -A` or `git add .`), runs `git commit` with the exact message shown via heredoc, then pushes (use the existing upstream if set, otherwise `git push -u origin <current branch>`). Report the commit hash and confirm the push. Nothing else.
+1. If "Status"/"Changes" above show no open changes, report the "Last commit" above (hash, message, how long ago) and whether it's already pushed (compare to Upstream). Say there's nothing new to commit. Stop — do not write a message or show the picker.
+2. Output exactly these four labeled sections, in this order, nothing else:
+   - **Change list** — one line per file, vertical, as `Added: path` / `Modified: path` / `Deleted: path` (covers staged + unstaged + untracked — the diff is the truth, not this conversation).
+   - **AI check** — one line per flagged file, "better excluded (add to .git/info/exclude): path" for anything that reads like an AI-tracking artifact (scratch notes, `PLAN.md`/`NOTES.md`/`SUMMARY.md`-style files, anything not clearly part of the real source tree). If none, say "None flagged."
+   - **commit-title** — the subject line, ≤72 chars, matching the repo's existing message style.
+   - **commit-body** — the rest of the message, only if the diff genuinely needs one. Never include AI attribution of any kind (no "Co-Authored-By: Claude", no "Generated with" lines).
+   `commit-title` + `commit-body` together are the exact text that goes into `git commit` — Change list and AI check are review-only, never part of the commit.
+3. Present two real selectable options using the option-picker tool, not plain-text yes/no:
+   - **Commit & Push** — stages exactly the files listed above (never `git add -A` or `git add .`), runs `git commit` with `commit-title` + `commit-body` via heredoc, then pushes (use the existing upstream if set, otherwise `git push -u origin <current branch>`). Report the commit hash and confirm the push. Nothing else.
    - **Fix something first** — ends the turn immediately, nothing committed, nothing pushed. Do not guess what's wrong, do not ask follow-ups. Wait for the next message.
 
 Emphasis (optional): $ARGUMENTS

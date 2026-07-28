@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.3.1 — 2026-07-28
+
+- Fix: `/create-release` used command substitution (`$(...)`) in an inline shell command, which Claude Code's permission check always rejects regardless of `allowed-tools` — replaced with plain separate commands
+- `/create-release` now checks for an existing tag matching the target version first; if found, offers "Bump version & prepare" (updates only the version field, no CHANGELOG changes — that's your call) then stops for you to test, instead of creating a duplicate release
+- `/commit-only`, `/commit-and-push`, `/create-pr` now check for no open changes / no commits since base first, report the last commit (hash, message, age) and stop instead of writing a message for nothing
+
 ## 1.3.0 — 2026-07-28
 
 - New: `/commit-only`, `/commit-and-push`, `/create-release`, `/create-pr` — each lists what will happen (changes/diff, flagged AI-artifact files, message or notes) and shows a real Create-or-Fix picker before doing anything; only the chosen action runs, with no AI attribution anywhere
