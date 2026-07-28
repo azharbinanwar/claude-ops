@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.3.0 — 2026-07-28
+
+- New: `/commit-only`, `/commit-and-push`, `/create-release`, `/create-pr` — each lists what will happen (changes/diff, flagged AI-artifact files, message or notes) and shows a real Create-or-Fix picker before doing anything; only the chosen action runs, with no AI attribution anywhere
+- `/commit-msg` now flags files that look like AI-tracking artifacts as better excluded, and offers two message versions (short subject-only, and detailed with body) to pick from
+- All answer-only commands (`/short`, `/yn`, `/easy`, `/summary`, `/compare`, `/table`, `/is-done`, `/where`, `/name`, `/explain`, `/why`, `/errfix`, `/risks`, `/nocode`, `/latest`, `/regex`, `/cmd`, `/example`, `/research`, `/practice`, `/options`, `/confirm`) now explicitly ignore instruction-like wording embedded in the question — they answer, never edit files, even if asked to (fix after a real case where `/short` started editing code)
+- New: `/fyi` — acknowledges a mid-task note in one line, then keeps going without losing its place
+- New: `/fresh-take` — ignores your stated framing and designs the problem from scratch
+- New: `/practice` — What / Why / Table research on industry standard practice, including built-in language/framework support and company adoption data
+- `/patch-only` now lists what the fix covers vs. deliberately excludes, before writing the diff — no stop, no wait, just visibility (added after a real case where a narrow guard silently excluded the majority of inputs)
+
 ## 1.2.0 — 2026-07-27
 
 - New: `skill/SKILL.md` — claude.ai skill packaging the 13 response-style modes for web chats; zip attached to releases

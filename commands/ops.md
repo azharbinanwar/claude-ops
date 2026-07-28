@@ -19,12 +19,15 @@ Output exactly this table, nothing else:
 | /table | Any answer as a table |
 | /is-done | Yes/No completion check, no re-reading |
 | /research | Deep web research + sources |
+| /practice | Industry standard: What / Why / Table |
 | /latest | Time-aware answer, real date injected |
 | /where | Clickable file:line locations |
 | /name | 3–5 name ideas |
 | /nocode | Answer only, no file edits |
 | /quick | Act now, skip exploration |
 | /use-context | Work from the conversation, don't re-read |
+| /fyi | Acknowledge a mid-task note, keep going |
+| /fresh-take | Ignore my framing, design from scratch |
 | /confirm | Restate what you understood, then wait |
 | /tell-me-first | Plan ≤5 lines, then wait |
 | /todos | Checklist first, then execute |
@@ -39,7 +42,11 @@ Output exactly this table, nothing else:
 | /errfix | Cause + smallest fix |
 | /options | 2–3 approaches + pick |
 | /risks | What could break, ≤6 bullets |
-| /commit-msg | Message from open changes |
+| /commit-msg | Short + detailed message, flags AI-artifact files |
+| /commit-only | Lists changes + message, pick Commit or Fix — commits, no push |
+| /commit-and-push | Same, but Commit & Push actually pushes too |
+| /create-release | Shows version + notes, pick Create or Fix — creates the GitHub release |
+| /create-pr | Shows diff + title/desc, pick Create or Fix — opens the PR |
 | /pr-desc | PR title + description |
 | /issue | Ready-to-paste GitHub issue |
 | /polish | Rough text → clean English |
