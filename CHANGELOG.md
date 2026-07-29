@@ -1,8 +1,9 @@
 # Changelog
 
-## Unreleased
+## 1.5.0 — 2026-07-29
 
 - Removed the git-related commands (`/commit-msg`, `/commit-only`, `/commit-and-push`, `/create-release`, `/create-pr`, `/pr-desc`, `/issue`) to keep this plugin focused on non-git response/behavior modes
+- `/create-release`'s `gh auth status` check shrunk to a one-word check instead of dumping the full account/token/scopes output into context every run
 
 ## 1.4.0 — 2026-07-29
 
