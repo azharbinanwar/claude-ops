@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Removed the git-related commands (`/commit-msg`, `/commit-only`, `/commit-and-push`, `/create-release`, `/create-pr`, `/pr-desc`, `/issue`) to keep this plugin focused on non-git response/behavior modes
+
 ## 1.4.0 — 2026-07-29
 
 - `/create-pr` now detects the repo's real default branch (`gh repo view`/`origin/HEAD`, not a hardcoded `main`), offers a target-branch picker labeling the recommended default, and checks for an already-open PR on the branch before drafting a new one

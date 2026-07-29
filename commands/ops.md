@@ -42,11 +42,4 @@ Output exactly this table, nothing else:
 | /errfix | Cause + smallest fix |
 | /options | 2–3 approaches + pick |
 | /risks | What could break, ≤6 bullets |
-| /commit-msg | Short + detailed message, flags AI-artifact files |
-| /commit-only | Lists changes + message, pick Commit or Fix — commits, no push |
-| /commit-and-push | Same, but Commit & Push actually pushes too |
-| /create-release | Shows version + notes, pick Create or Fix — creates the GitHub release |
-| /create-pr | Shows diff + title/desc, pick Create or Fix — opens the PR |
-| /pr-desc | PR title + description |
-| /issue | Ready-to-paste GitHub issue |
 | /polish | Rough text → clean English |

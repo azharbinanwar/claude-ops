@@ -93,13 +93,6 @@ Then `/reload-plugins`. New versions are listed in [CHANGELOG.md](CHANGELOG.md).
 ### Write it for me
 | Command | What you get |
 |---|---|
-| `/commit-msg` | Short + detailed message from your real open changes, flags AI-artifact files worth excluding, never commits, no AI sign |
-| `/commit-only` | Lists changes + message, then a real Commit/Fix-first picker — commits locally, never pushes |
-| `/commit-and-push` | Same flow, but the picker's Commit & Push option pushes too |
-| `/create-release` | Shows the version + release notes, then Create/Fix-first — actually creates the GitHub release |
-| `/create-pr` | Shows the branch diff + title/description, then Create/Fix-first — actually opens the PR |
-| `/pr-desc` | PR title + description from the branch diff |
-| `/issue [bug]` | Ready-to-paste GitHub issue |
 | `/polish <text>` | Your rough words → clean English, meaning kept |
 
 ## Measured results
