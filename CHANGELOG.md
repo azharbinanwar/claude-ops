@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.5.1 — 2026-08-03
+
+- `/todos` now shows a detailed checklist (concrete file/action per line, not vague phase labels) and waits for your confirmation before executing, instead of running immediately
+
 ## 1.5.0 — 2026-07-29
 
 - Removed the git-related commands (`/commit-msg`, `/commit-only`, `/commit-and-push`, `/create-release`, `/create-pr`, `/pr-desc`, `/issue`) to keep this plugin focused on non-git response/behavior modes
